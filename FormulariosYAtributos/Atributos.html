@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>Elementos Input en HTML5</title>
+  </head>
+    <body>
+      <form>
+        <fieldset>
+          <legend>Atributos para la etiqueta input</legend>
+          <p>
+            Campo de texto deshabilitado<br/>
+            <input  type="text" disabled value="Texto">
+          </p>
+          <p>
+            Campo de texto solo lextura<br/>
+            <input  type="text" readonly value="Texto">
+          </p>
+          <p>
+            Texto máximo de 5 caracteres (Intentaremos escribir el nomre Alejando)<br/>
+            <input  type="text" maxlength="5">
+          </p>
+          <p>
+            Campo para ingresar un número con valor máximo de 100<br/>
+            <input  type="number" max="100">
+          </p>
+          <p>
+            Campo para ingresar un número con valor minimo de 10<br/>
+            <input  type="number" min="10">
+          </p>
+          <p>
+            Campo de texto con valor predeterminado de Texto ejemplo<br/>
+            <input  type="text" value="Texto Ejemplo">
+          </p>
+          <p>
+            Campo númerico con paso de 5<br/>
+            <input  type="number" step="5">
+          </p>
+          <p>
+            Atributo con pista para el usuario<br/>
+            <input  type="text" placeholder="Ingrese su nombre">
+          </p>
+          <p>
+            Atributo para nombrar la etiqueta<br/>
+            <input  type="text" name="campo_apellido">
+          </p>
+          <p>
+            Atributo para asignar un identificaro unic<br/>
+            <input  type="email" id="email_usuario">
+          </p>
+        </fieldset>
+      </form>
+    </body>
+</html>

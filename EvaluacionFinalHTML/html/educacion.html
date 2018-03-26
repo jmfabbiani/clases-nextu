@@ -83,12 +83,78 @@
         <li><a href="experiencia.html">Experiencia</a></li>
       </ul>
     </nav>
-
-    <h1>Etiqueta source para videos</h1>
-    <video controls poster="images/24.1.png" width="500px" height="500px">
-    		<source src="video/Comp 1_3.mp4" type="video/mp4">
-          Texto navegador no soporta ninguno de los videos
-    </video>
+    <section>
+      <h2>Educación</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Año</th>
+            <th>Institución</th>
+            <th>Lugar</th>
+            <th>¿Culminó?</th>
+            <th>Título</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1999</td>
+            <td>Integral Guri</td>
+            <td>Puerto Ordaz</td>
+            <td>Si</td>
+            <td>Bachiller en Humanidades</td>
+          </tr>
+          <tr>
+            <td>2007</td>
+            <td>U.G.M.A.</td>
+            <td>Puerto Ordaz</td>
+            <td>Si</td>
+            <td>Economista</td>
+          </tr>
+         </tbody>
+        </table>
+      </section>
+      <hr>
+    <section>
+    <h2>Agregar Eduación</h2>
+    <form action="">
+    <p>
+      <label for="year">Año: </label>
+        <select name="year">
+        <option value="1">2000</option>
+        <option value="1">2001</option>
+        <option value="1">2002</option>
+        <option value="1">2003</option>
+        <option value="1">2004</option>
+        <option value="1">2005</option>
+        <option value="1">2006</option>
+        <option value="1">2007</option>
+        <option value="1">2008</option>
+        <option value="1">2009</option>
+        <option value="1">2010</option>
+      </select>
+    </p>
+    <p>
+      <label for="institution">Institución:</label>
+      <input type="text" name="institution" placeholder="Ej: NextU" required>
+    </p>
+    <p>
+      <label for="place">Lugar:</label>
+      <textarea name="place" id="" cols="30" rows="4" placeholder="Ej: Ciudad Guayana"></textarea>
+    </p>
+    <p>
+      <label for="conclude">¿Culminó?:</label>
+      <input type="radio" name="conclude"> Si
+      <input type="radio" name="conclude"> No
+    </p>
+    <p>
+      <label for="degree">Título:</label>
+      <input type="text" name="degree" placeholder="Ej: Diplomado">
+    </p>
+    <p>
+      <input type="submit" value="Enviar">
+    </p>
+    </form>
+    </section>
     <footer>
       <p>@Derechos Reservados</p>
       <ul>

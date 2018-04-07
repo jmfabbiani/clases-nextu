@@ -52,3 +52,22 @@ article> h2 {
 ul li {
   list-style-type: circle;
 }
+a[href^='http://']:visited{
+  color: red;
+}
+a:hover{
+  color: blue;
+}
+h2:first-child{
+  text-decoration: underline;
+}
+input:focus{
+  width: 160px;
+  height: 140px;
+}
+p::first-letter{
+  text-transform: capitalize;
+}
+p::first-line{
+  font-size: 32;
+}

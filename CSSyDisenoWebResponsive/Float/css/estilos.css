@@ -12,14 +12,22 @@ section aside{
   width: 20%;
   height: 400px;
   background-color: rgb(24, 128, 180);
+  float: left;
 }
 section article{
   width: 80%;
   height: 400px;
   background-color: rgb(150, 185, 203);
+  float: right;
 }
 footer{
+  clear: both;
   height: 100px;
   width: 100%;
   background-color: rgb(218, 146, 29);
+}
+header img{
+  height: 90%;
+  float: right;
+  padding: 0.5% 2% 0 0;
 }

@@ -5,29 +5,30 @@ body {
 }
 
 header {
-	padding: 3px 10px;
-	margin-bottom: 5px;
+	padding: 1vh 1vw;
+	margin-bottom: 1vh;
 	background: -webkit-linear-gradient(left, #1f47a8, #55dedf); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(right, #1f47a8, #55dedf); /* For Opera 11.1 to 12.0 */
 	background: -moz-linear-gradient(right, #1f47a8, #55dedf); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(to right, #1f47a8, #55dedf); /* Standard syntax */
-	border-radius: 10px;
+	border-radius: 1vh;
 }
 
 #contenido{
 	margin: 1%;
+	font-size: 3vw;
 }
 
 
 header h1 {
 	padding-left: 1%;
-	font-size: 1.5em;
+	font-size: 3vw;
 }
 
 footer {
-	font-size: 0.8em;
+	font-size: 3vw;
 	border-top: solid 2px #1f47a8;
-	padding-top: 10px;
-	margin-top: 15px;
+	padding-top: 1vw;
+	margin-top: 1vw;
 	text-align: center;
 }

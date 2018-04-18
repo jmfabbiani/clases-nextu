@@ -32,7 +32,7 @@ header h1{
 	margin-left: 200px;
 	padding: 10px;
 	color: black;
-	background: url(../imagenes/imagen3.jpg) top  ;
+	background: url(../imagenes/imagen3.jpg) top;
 	border-radius: 6px;
 }
 
@@ -46,4 +46,7 @@ footer {
 
 #contenido p img {
 	float: right;
+	border: 2px solid #605B56;
+	border-radius: 4px;
+	margin: 3px;
 }

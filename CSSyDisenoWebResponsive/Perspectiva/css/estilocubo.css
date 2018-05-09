@@ -5,7 +5,7 @@
   margin: 5em auto;
   transform-style: preserve-3d;
   perspective: 250px;
-  perspective-origin: bottom;;
+  perspective-origin: bottom left;
 }
 
 .side {

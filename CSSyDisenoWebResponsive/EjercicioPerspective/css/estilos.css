@@ -37,3 +37,30 @@ figure img {
 	width: 420px;
 }
 
+#imagen1 {
+	perspective: 2000px;
+	-webkit-perspective: 2000px;
+}
+
+#imagen1 img{
+	transform: rotateY(40deg);
+}
+
+#imagen2 {
+	-webkit-perspective: 3000px; /* Chrome, Safari, Opera */
+	perspective: 3000px;
+}
+
+#imagen2 img{
+	transform: rotateY(-30deg);
+}
+
+
+#imagen3 {
+	-webkit-perspective: 100px; /* Chrome, Safari, Opera */
+	perspective: 100px;
+}
+
+#imagen3 img{
+	transform: rotateX(40deg);
+}

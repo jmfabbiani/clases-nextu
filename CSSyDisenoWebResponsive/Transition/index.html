@@ -10,24 +10,51 @@
           height: 600px;
           border: 2px solid;
           margin: 0 auto;
-          background-color: blue;
+          background-color: #DBFFF1;
+          text-align: center;
           transition: background 1s;
+          animation: miAnimacion 3s infinite;
         }
-      #contenedor img{
-          width: 200px;
-          height: 200px;
-          transition-property: width, height;
-          transition-duration: 2s, 4s;
-      }
-      #contenedor img:hover{
-        width: 100%;
-        height: 100%;
-      }
-      </style>
+        .circulo{
+          width: 100px;
+          height: 100px;
+          background-color: blue;
+          border-radius: 50px;
+          margin: 2vh;
+          float: left;
+          animation: circles 4s infinite;
+        }
+        @-webkit-keyframes circles{
+          0%{
+            opacity: 0;
+          }
+          25%{
+            opacity: 0.25;
+            float: right;
+          }
+          50%{
+            opacity: 0.50;
+            float: left;
+          }
+          75%{
+            opacity: 0.75;
+            float: right;
+          }
+          100%{
+            opacity: 1;
+            float: left;
+          }
+        }
+    </style>
   </head>
   <body>
     <section id="contenedor">
-      <img src="img/f90.jpg" alt="kiko">
+      <div class="circulo">
+
+      </div>
+      <div class="circulo">
+
+      </div>
     </section>
 
   </body>

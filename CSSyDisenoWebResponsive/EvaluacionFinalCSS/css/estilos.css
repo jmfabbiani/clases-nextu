@@ -194,7 +194,7 @@ h2{
   filter: grayscale(100%);
 }
 
-/* animaciones de imagenes*/
+/*Animaciones de Imagenes Inicio*/
 #img_paisaje{
   transition: all .4s;
 }
@@ -232,7 +232,7 @@ header {
   }
 }
 /*Responsive*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .galeria{
       width: 100%;
     }

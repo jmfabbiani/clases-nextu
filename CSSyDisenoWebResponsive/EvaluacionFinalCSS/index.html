@@ -12,32 +12,36 @@
     <header>
       <h1>Comenzando con la fotografía</h1>
       <nav>
-        <a href="index.html" class="menu">Inicio</a>
-        <a href="paisajes.html" class="menu">Paisajes</a>
-        <a href="retratos.html" class="menu">Retratos</a>
+        <ul>
+          <li><a href="index.html" class="menu">Inicio</a></li>
+          <li><a href="paisajes.html" class="menu">Paisajes</a></li>
+          <li><a href="retratos.html" class="menu">Retratos</a></li>
+        </ul>
       </nav>
     </header>
-  <section>
-    <div id="Imagen1" class="item">
-      <img src="img/portada.jpg" alt="Puente">
-  	</div>
-    <div id="Paisajes" class="item">
-  	   <img src="img/paisaje1.jpg" alt="Imagen Pzo">
-  	</div>
-  	<div id="Retratos" class="item">
-  		<img src="img/retrato1.jpg" alt="Colonia">
-  	</div>
+    <section class="section">
+      <div id="CuerpoCentral" class="item">
+        <img id="ImgCentral" src="img/portada.jpg" alt="Puerto Ordaz">
+    	</div>
+      <div id="CuerpoPaisaje" class="item">
+    	   <img id="img_paisaje" src="img/paisaje.jpg" alt="Puente Caroni">
+    	</div>
+      <div id="CuerpoRetratos" class="item">
+    		<img id="img_retrato" src="img/retrato.jpg" alt="Colonia">
+    	</div>
+      <div id="Titpaisaje" class="tituloimg"><h2><a href="paisajes.html" class="menu">Paisajes</a></h2></div>
+      <div id="Titretrato" class="tituloimg"><h2><a href="retratos.html" class="menu">Retratos</a></h2></div>
   </section>
-    <footer>
+    <footer class="footer">
       <div id="columna1" class="Columnfooter">
            <h2>Contacto</h2>
-           <P>jose.fabbiani@gmail.com</P>
-           <P>Av. Paseo Caroni</P>
-           <P>+58 (286) 9235689</P>
+           <p>jose.fabbiani@gmail.com</p>
+           <p>Av. Paseo Caroni</p>
+           <p>+58 (286) 9235689</p>
        </div>
        <div id="columna2" class="Columnfooter">
            <h2>Términos</h2>
-           <P>Compromiso con los clientes</P>
+           <p>Compromiso con los clientes</p>
        </div>
        <div id="columna3" class="Columnfooter">
            <h2>Redes Sociales</h2>
@@ -49,7 +53,7 @@
            <p>@fotostudents</p>
        </div>
        <div id="columna4" class="Columnfooter">
-           <P>José Fabbiani® 2017 </P>
+           <p>José Fabbiani® 2017 </p>
        </div>
     </footer>
 </div>

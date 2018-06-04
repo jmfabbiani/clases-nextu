@@ -1,15 +1,292 @@
-body{
+/*Contenedores*/
+.contenido{
+    width:100%;
+    max-width:1366px;
+    min-width:220px;
+    margin:0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+header ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+.section{
+    width:100%;
+    max-width:1366px;
+    min-width:220px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center ;
+    align-items: center ;
+    align-content: space-around;
+}
+.footer{
+    width:100%;
+    max-width:1366px;
+    min-width:220px;
+    background: #c6d5c5;
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
+#galeria{
+  width:100%;
+  max-width:1366px;
+  min-width:220px;
+  display: flex;
+  flex-flow: row wrap;
+}
+/* Contenido en flex */
+header{
+    width: 100%;
+    height:auto;
+    background-color:#5b7989;
+    border-radius: 10px 10px 0px 0px;
+    overflow:hidden;
+    text-align:center;
+    flex: 1 100%;
+    position: sticky;
+    top: 0;
+}
+
+#CuerpoCentral{
+    height:100%;
+    background-color:#82c3a6;
+    flex: 1 100%;
+}
+
+#CuerpoPaisaje{
+    height:100%;
+    background: #d5c75f;
+    flex: 1 auto;
+}
+
+#CuerpoRetratos{
+    height:100%;
+    background-color: #d5c75f;
+    flex: 1 auto;
+}
+
+#columna1{
+    height:350px;
+    flex: 1 auto;
+    font-weight: bold;
+}
+
+#columna2{
+    height:350px;
+    flex: 1 auto;
+    font-weight: bold;
+}
+
+#columna3{
+    height:350px;
+    flex: 1 auto;
+    font-weight: bold;
+}
+
+#columna4{
+    height:350px;
+    flex: 1 auto;
+    font-weight: bold;
+}
+
+#galeria1{
+  height: auto;
+  flex: 1 auto;
+}
+
+#galeria2{
+  height: auto;
+  flex: 1 auto;
+}
+
+#galeria3{
+  height: auto;
+  flex: 1 auto;
+}
+/*cuerpo y otros*/
+body {
+  background: black;
+}
+
+header h1 {
   font-family: 'Dancing Script';
+  font-size: 1.5em;
+  letter-spacing: 3px;
+  color: white;
+  text-shadow: 2px 0px 0px  #02010a;
+  line-height:60px;
+  margin:0;
+  font-size:35px;
+  float:left;
+  width:60%;
+  padding-left:20px;
+  box-sizing:border-box;
 }
 
-.cabecera {
-  background-color: #5b7989;
+header nav {
+    font-family: 'Dancing Script';
+    float:left;
+    width:40%;
+    line-height:60px;
+    padding-right:20px;
+    box-sizing:border-box;
 }
 
-.titulo {
-  float: left;
+li a {
+    text-decoration: underline;
+    color: white;
+    letter-spacing: 2px;
 }
 
-.navegacion {
-  positi
+header ul li {
+    margin:0 5px;
+    font-size:25px;
+    cursor:pointer;
+    color:#D5C5C5;
+}
+
+.tituloimg{
+    width: 50%;
+    text-align: center;
+    background: #d5c75f;
+    font-family: 'Dancing Script';
+    font-size: 1.5em;
+    text-decoration:underline;
+}
+
+div img{
+  margin: auto;
+  display:block;
+  border: 1px solid black;
+  box-shadow: 4px 5px black;
+  width: 80%;
+}
+
+p{
+    font-family: 'Dancing Script', bold;
+    text-align: center;
+}
+
+h2{
+    font-family: 'Dancing Script';
+    text-align: center;
+}
+
+.iconredes{
+     width: 30px;
+}
+
+.img_gris{
+  filter: grayscale(100%);
+}
+
+/* animaciones de imagenes*/
+#img_paisaje{
+  transition: all .4s;
+}
+
+#img_paisaje:hover{
+  border: 2px solid black;
+  box-shadow: 6px 0px 0px #82c3a6;
+  transform: rotate(10deg);
+}
+
+#img_retrato{
+  transition: all .6s;
+}
+
+#img_retrato:hover{
+  transform: translate(20px,-5px);
+  border: 2px solid black;
+  box-shadow: 6px 0px 0px #82c3a6;
+}
+
+/*Slidein Entrada*/
+header {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  0% {
+    margin-top: 150%;
+  }
+  60% {
+    margin-top: -5%;
+  }
+  100% {
+    margin-top: 0%;
+  }
+}
+/*Responsive*/
+@media screen and (max-width: 600px) {
+    .galeria{
+      width: 100%;
+    }
+    header h1{
+        font-size: 1.2em;
+        width: 100%;
+    }
+    header nav{
+        width: 100%;
+    }
+    header ul{
+        flex-flow: row wrap;
+    }
+    li a{
+        font-size: 12px;
+    }
+    header{
+        display: block;
+        order:0;
+    }
+    #CuerpoCentral{
+        flex: 1 100%;
+        order:1;
+    }
+    #CuerpoPaisaje{
+        flex: 1 100%;
+        order:2;
+    }
+    #Titpaisaje{
+        flex: 1 100%;
+        order:3;
+    }
+    #CuerpoRetratos{
+        flex: 1 100%;
+        order:4;
+    }
+    #Titretrato{
+        flex: 1 100%;
+        order:5;
+    }
+    #columna1{
+         height: auto;
+         flex: 1 100%;
+    }
+    #columna2{
+        height: auto;
+         flex: 1 100%;
+    }
+    #columna3{
+        height: auto;
+         flex: 1 100%;
+    }
+    #columna4{
+        height: auto;
+         flex: 1 100%;
+    }
 }

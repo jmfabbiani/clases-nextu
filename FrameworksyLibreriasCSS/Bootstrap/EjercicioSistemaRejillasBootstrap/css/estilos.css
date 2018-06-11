@@ -44,6 +44,15 @@
   .right-column{
     display: none;
   }
+  .movies-row{
+    min-height: 250px;
+  }
+  .movies-column{
+    min-height: 230px;
+  }
+  .jumbotron{
+    min-height: 350px;
+  }
 }
 /* Clase para dar estilo a columna de cartelera */
 .left-column {

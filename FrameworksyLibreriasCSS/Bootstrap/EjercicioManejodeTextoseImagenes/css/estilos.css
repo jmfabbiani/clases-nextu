@@ -1,10 +1,19 @@
 /* Clase para darle estilos al body */
 .cinema-body {
-  background: #D0D0D0;
+  background: url(../img/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
+/* Clase para darle estilos al logo del sitio en la barra de navegacion */
+.logo-img {
+  width: 100px;
 }
 /* Clase para darle estilos a la barra de navegacion */
 .navbar-inverse {
-  background: #082D5E;
+  background-color: rgba(8, 45, 94, 0.95);
   min-height: 10%;
   border: none;
 }
@@ -17,16 +26,58 @@
   min-height: 500px;
   margin-bottom: 0px;
   border-radius: 0px !important;
-  background: #00678E;
+  background: url(../img/cartelera.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
-/* Clase para darle estilos a la etiqueta contenedora de los encabezados/titulos*/
+/* Clase para darle estilos a la etiqueta contenedora del titulo de bienvenida */
+.welcome-title {
+  margin-right: 10px;
+  color:#FFFFFF;
+}
+/* Clase para darle estilos a la etiqueta contenedora del logo de bienvenida */
+.jumbotron-img {
+  margin-top: 20px;
+  width: 220px;
+}
+/* Clase para darle estilos a la etiqueta contenedora del texto del jumbotron */
+.jumbotron-text {
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+/* Clase para darle estilos a la etiqueta contenedora de las redes sociales */
+.redes-sociales {
+  margin-top: 20px;
+}
+/* Clase para darle estilos a la etiqueta contenedora de las imagenes redes sociales */
+.img-social {
+  width: 40px;
+  height: 40px;
+}
+/* Clase para darle estilos a la etiqueta contenedora de las imagenes redes sociales */
 .titulo-cartelera {
-  min-height: 45px;
-  background: #082D5E;
+  min-height: 35px;
+  background-color: rgba(8, 45, 94, 0.95)
+}
+/* Clase para darle estilos a la etiqueta contenedora de las imagenes redes sociales */
+.titulo-text {
+  font-size: 18px;
+  font-weight: bolder;
+  color: #FFFFFF;
+  padding: 10px;
 }
 /* Clase para darle estilos a la fila de peliculas*/
 .movies-row {
-  background:#00678E;
+  background:rgba(0, 0, 0, 0.8);
+  min-height: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Clase para darle estilos al titulo de peliculas*/
+.movies-title {
+  background:rgba(0, 0, 0, 0.8);
   min-height: 350px;
   padding-left: 15px;
   padding-right: 15px;

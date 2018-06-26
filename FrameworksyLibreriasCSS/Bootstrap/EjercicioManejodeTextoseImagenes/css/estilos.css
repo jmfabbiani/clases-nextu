@@ -19,7 +19,7 @@
 }
 /* Clase para darle estilos al contenedor principal */
 .container-fluid {
-  margin-top: 64px;
+  margin-top: 73px;
 }
 /* Clase para darle estilos al jumbotron */
 .jumbotron {
@@ -49,7 +49,7 @@
 }
 /* Clase para darle estilos a la etiqueta contenedora de las redes sociales */
 .redes-sociales {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 /* Clase para darle estilos a la etiqueta contenedora de las imagenes redes sociales */
 .img-social {
@@ -59,7 +59,7 @@
 /* Clase para darle estilos a la etiqueta contenedora de las imagenes redes sociales */
 .titulo-cartelera {
   min-height: 35px;
-  background-color: rgba(8, 45, 94, 0.95)
+  background-color: rgba(8, 45, 94, 0.95);
 }
 /* Clase para darle estilos a la etiqueta contenedora de las imagenes redes sociales */
 .titulo-text {
@@ -70,23 +70,25 @@
 }
 /* Clase para darle estilos a la fila de peliculas*/
 .movies-row {
-  background:rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   min-height: 350px;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* Clase para darle estilos al titulo de peliculas*/
 .movies-title {
-  background:rgba(0, 0, 0, 0.8);
-  min-height: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
+  color: #FFFFFF;
+}
+/* Clase para darle estilos a las imagenes de las peliculas*/
+.img-movie {
+  height: 260px;
+  margin-top: 22px;
+  padding: 6px;
 }
 /* Clase para darle estilos a las columnas de peliculas*/
 .movies-column {
   margin-top: 5px;
   min-height: 330px;
-  background: #00678E;
   border: 1px dashed white;
 }
 /* Media query para columnas */

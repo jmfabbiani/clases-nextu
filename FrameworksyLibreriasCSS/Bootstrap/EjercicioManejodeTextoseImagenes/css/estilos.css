@@ -79,35 +79,67 @@
 .movies-title {
   color: #FFFFFF;
 }
+/* Clase para dar estilo a columna de cartelera */
+.left-column {
+  border-right: 1px dashed white;
+}
 /* Clase para darle estilos a las imagenes de las peliculas*/
 .img-movie {
   height: 260px;
   margin-top: 22px;
   padding: 6px;
 }
+/* Clase para dar estilo a columna de cartelera */
+.services-text {
+  color: #FFFFFF;
+  margin-top: 13px;
+}
 /* Clase para darle estilos a las columnas de peliculas*/
 .movies-column {
-  margin-top: 5px;
+  color: #FFFFFF;
   min-height: 330px;
   border: 1px dashed white;
 }
+.col-centered {
+  display:inline-block;
+  float:none;
+}
+.row-centered {
+  text-align:center;
+}
 /* Media query para columnas */
 @media (max-width:770px) {
+  h2 {
+    font-size: 22px;
+  }
+  .titulo-text {
+  font-size: 15px;
+  }
 /* Clase para ocultar componentes HTML */
   .right-column{
     display: none;
   }
-  .movies-row{
+  .movies-row {
     min-height: 250px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
-  .movies-column{
+  .container-fluid{
+    margin-top: 60px;
+  }
+  .movies-column {
     min-height: 230px;
   }
   .jumbotron{
-    min-height: 350px;
+    min-height: 400px;
   }
-}
-/* Clase para dar estilo a columna de cartelera */
-.left-column {
-  border-right: 1px dashed white;
+  .jumbotron-img {
+    width: 150px;
+    margin-top: 20px;
+  }
+  .img-movie {
+    height: 133px;
+    padding: 6px;
+    margin-top: 22px;
+  }
 }

@@ -1,15 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width initial-scale=1'>
-      <meta name='mobile-web-app-capable' content='yes'>
-      <link rel='stylesheet' href='css/bootstrap.min.css'>
-      <link rel='stylesheet' href='css/estilos.css'>
-      <script src='js/bootstrap.min.js'></script>
-      <title>Clases para Form, Input y Button</title>
-    </head>
-    <body class="container">
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <meta name='mobile-web-app-capable' content='yes'>
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' href='css/estilos.css'>
+    <script src='js/bootstrap.min.js'></script>
+    <title>Clases para Form, Input y Button</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="" role="form">
+        <legend>Formulario de Contacto</legend>
 
+        <div class="form-group">
+          <label for="Nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="Telefono">Teléfono</label>
+          <input type="number" name="telefono" id="Telefono" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="email" name="email" id="Email" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="hobbie1">Leer</label>
+          <input type="checkbox" name="hobbie1" id="hobbie1" class="form-control">
+        </div>
+
+
+        <div class="form-group">
+          <label for="hobbie2">Escribir</label>
+          <input type="checkbox" name="hobbie2" id="hobbie2" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="hobbie3">Videojuegos</label>
+          <input type="checkbox" name="hobbie3" id="hobbie3" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="Comentario">Comentario</label>
+          <textarea name="comentario" rows="8" cols="40" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <input type="button" name="boton" value="enviar" class="btn btn-default">
+        </div>
+      </form>
+    </div>
   </body>
 </html>

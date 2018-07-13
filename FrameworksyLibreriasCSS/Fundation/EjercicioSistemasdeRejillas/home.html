@@ -62,14 +62,18 @@
         <div class="callout">
           <h4>Búsqueda Avanzada</h4>
           <form>
-            <div class="">
+            <div class="row column">
               <label >Por nombre:
                 <input type="text" name="" value="">
               </label>
+            </div>
+            <div class="row column">
               <label>Por referencia:
                 <input type="text" required aria-describedby="ayudaTexto"/>
               </label>
-              <p class="help-text" id="ayudaTexto"> Número único del producto </p>
+              <p class="help-text" id="ayudaTexto">Número único del producto</p>
+            </div>
+            <div class="row column">
               <label>Por categoría:
                 <select>
                   <option value="1">Hogar</option>
@@ -81,20 +85,30 @@
                   <option value="7">Mantenimiento</option>
                 </select>
               </label>
+            </div>
+            <div class="row column">
               <fieldset>
-                <legend>TIpo de producto:</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Nuevo</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Usado</label>
+                <legend>Tipo de producto:</legend>
+                <input id="nuevo-check" type="checkbox"><label for="checkbox1">Nuevo</label>
+                <input id="usado-check" type="checkbox"><label for="checkbox2">Usado</label>
               </fieldset>
+            </div>
+            <div class="row column">
               <fieldset>
                 <legend>Tipo de precio</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Pleno</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">En oferta</label>
+                <input type="radio" name="tipo-precio" value="Rojo" id="pleno"><label for="Pleno">Pleno</label>
+                <input type="radio" name="tipo-precio" value="Azul" id="en_oferta"><label for="en_oferta">En oferta</label>
               </fieldset>
-              <label class="switch-paddle" for="ejSwitch">
-                <span class="switch-active" aria-hidden="true">Si</span>
-                <span class="switch-inactive" aria-hidden="true">No</span>
-              </label>
+            </div>
+            <div class="row column text-center">
+              <label>¿Buscar productos agotados?</label>
+              <div class="switch medium">
+                <input class="switch-input" id="agotados-switch" type="checkbox">
+                <label class="switch-paddle" for="agotados-switch">
+                  <span class="switch-active" aria-hidden="true">Si</span>
+                  <span class="switch-inactive" aria-hidden="true">No</span>
+                </label>
+              </div>
             </div>
           </form>
         </div>

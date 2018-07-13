@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tienda</title>
+    <title>Tienda JMF</title>
     <link rel="stylesheet" href="css/foundation.min.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="foundation-icons/foundation-icons.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/home.css" media="screen" charset="utf-8">
@@ -61,6 +61,42 @@
       <div class="large-3 columns">
         <div class="callout">
           <h4>Búsqueda Avanzada</h4>
+          <form>
+            <div class="">
+              <label >Por nombre:
+                <input type="text" name="" value="">
+              </label>
+              <label>Por referencia:
+                <input type="text" required aria-describedby="ayudaTexto"/>
+              </label>
+              <p class="help-text" id="ayudaTexto"> Número único del producto </p>
+              <label>Por categoría:
+                <select>
+                  <option value="1">Hogar</option>
+                  <option value="2">Salud</option>
+                  <option value="3">Deporte</option>
+                  <option value="4">Tecnología</option>
+                  <option value="5">Accesorios</option>
+                  <option value="6">Ropa</option>
+                  <option value="7">Mantenimiento</option>
+                </select>
+              </label>
+              <fieldset>
+                <legend>TIpo de producto:</legend>
+                <input id="checkbox1" type="checkbox"><label for="checkbox1">Nuevo</label>
+                <input id="checkbox2" type="checkbox"><label for="checkbox2">Usado</label>
+              </fieldset>
+              <fieldset>
+                <legend>Tipo de precio</legend>
+                <input id="checkbox1" type="checkbox"><label for="checkbox1">Pleno</label>
+                <input id="checkbox2" type="checkbox"><label for="checkbox2">En oferta</label>
+              </fieldset>
+              <label class="switch-paddle" for="ejSwitch">
+                <span class="switch-active" aria-hidden="true">Si</span>
+                <span class="switch-inactive" aria-hidden="true">No</span>
+              </label>
+            </div>
+          </form>
         </div>
       </div>
       <div class="large-9 columns">

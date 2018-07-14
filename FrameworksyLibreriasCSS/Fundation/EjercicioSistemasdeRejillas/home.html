@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tienda JMF</title>
+    <title>Tienda</title>
     <link rel="stylesheet" href="css/foundation.min.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="foundation-icons/foundation-icons.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/home.css" media="screen" charset="utf-8">
@@ -62,39 +62,57 @@
         <div class="callout">
           <h4>Búsqueda Avanzada</h4>
           <form>
-            <div class="">
-              <label >Por nombre:
-                <input type="text" name="" value="">
+            <div class="row column">
+              <label>Por nombre:
+                <input type="text" name="name">
               </label>
+            </div>
+            <div class="row column">
               <label>Por referencia:
-                <input type="text" required aria-describedby="ayudaTexto"/>
+                <input type="text" name="name" aria-describedby="referencia-help">
               </label>
-              <p class="help-text" id="ayudaTexto"> Número único del producto </p>
+              <p class="help-text" id="referencia-help">Número único del producto</p>
+            </div>
+            <div class="row column">
               <label>Por categoría:
                 <select>
-                  <option value="1">Hogar</option>
-                  <option value="2">Salud</option>
-                  <option value="3">Deporte</option>
-                  <option value="4">Tecnología</option>
-                  <option value="5">Accesorios</option>
-                  <option value="6">Ropa</option>
-                  <option value="7">Mantenimiento</option>
+                  <option>Hogar</option>
+                  <option>Salud</option>
+                  <option>Deporte</option>
+                  <option>Tecnología</option>
+                  <option>Accesorios</option>
+                  <option>Ropa</option>
+                  <option>Mantenimiento</option>
                 </select>
               </label>
+            </div>
+            <div class="row column">
               <fieldset>
-                <legend>TIpo de producto:</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Nuevo</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Usado</label>
+                <legend>Tipo de producto:</legend>
+                <input id="nuevo-check" type="checkbox"><label for="checkbox1">Nuevo</label>
+                <input id="usado-check" type="checkbox"><label for="checkbox2">Usado</label>
               </fieldset>
+            </div>
+            <div class="row column">
               <fieldset>
-                <legend>Tipo de precio</legend>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Pleno</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">En oferta</label>
+                <legend>Tipo de precio:</legend>
+                <input type="radio" name="tipo-precio" value="Red" id="pleno"><label for="pleno">Pleno</label>
+                <input type="radio" name="tipo-precio" value="Blue" id="en_oferta"><label for="en_oferta">En oferta</label>
               </fieldset>
-              <label class="switch-paddle" for="ejSwitch">
-                <span class="switch-active" aria-hidden="true">Si</span>
-                <span class="switch-inactive" aria-hidden="true">No</span>
-              </label>
+            </div>
+            <div class="row column text-center">
+              <label>¿Buscar productos agotados?</label>
+              <div class="switch medium">
+                <input class="switch-input" id="agotados-switch" type="checkbox">
+                <label class="switch-paddle" for="agotados-switch">
+                  <span class="switch-active" aria-hidden="true">Si</span>
+                  <span class="switch-inactive" aria-hidden="true">No</span>
+                </label>
+              </div>
+            </div>
+            <div class="row column text-center">
+              <hr>
+              <button type="submit" name="enviar" class="button">Buscar <i class="step fi-magnifying-glass"></i></button>
             </div>
           </form>
         </div>
@@ -164,6 +182,7 @@
         </div>
       </div>
 
+      
     </div>
 
     <script src="js/jquery.js"></script>

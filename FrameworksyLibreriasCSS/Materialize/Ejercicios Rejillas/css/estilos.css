@@ -1,0 +1,8 @@
+.barra-superior {
+  min-height: 4rem;
+}
+
+div[class*="columna"] {
+  min-height: 50rem;
+  border: 1px solid #eceff1;
+}

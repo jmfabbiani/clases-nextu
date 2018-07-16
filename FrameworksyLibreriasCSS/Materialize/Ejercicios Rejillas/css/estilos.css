@@ -6,3 +6,8 @@ div[class*="columna"] {
   min-height: 50rem;
   border: 1px solid #eceff1;
 }
+
+div[class*="bloque"] {
+  min-height: 25rem;
+  border: 1px solid #eceff1;
+}

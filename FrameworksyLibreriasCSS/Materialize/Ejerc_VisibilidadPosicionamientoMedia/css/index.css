@@ -1,10 +1,29 @@
 .barra-superior{
   min-height: 4rem;
 }
+
 div[class*="columna"]{
   min-height: 50rem;
-  border: 1px solid #eceff1;
 }
+
 div[class*="bloque"]{
   height: 25rem;
+}
+
+.columna-news, .columna-news {
+  padding: 0 !important;
+}
+
+.contenedor-write-publicacion{
+  min-height: 7rem;
+}
+
+.contenedor-publicacion{
+  min-height: 17rem;
+  padding: 2rem;
+}
+
+.logo {
+  width: 45px;
+  margin-top: 0.5rem;
 }

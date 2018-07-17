@@ -23,6 +23,12 @@ div[class*="bloque"]{
   padding: 2rem;
 }
 
+.contenedor-noticias {
+  min-height: 50rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
 .logo {
   width: 45px;
   margin-top: 0.5rem;

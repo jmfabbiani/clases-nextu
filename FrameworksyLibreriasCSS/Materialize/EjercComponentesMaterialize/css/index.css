@@ -30,11 +30,37 @@ div[class*="bloque"]{
 }
 
 .logo {
-  width: 45px;
+  width: 40px;
   margin-top: 0.5rem;
+  float: left;
 }
 
 .responsive-img{
   border: 0.6rem solid #ff8f00;
   border-radius: 5px;
+}
+
+.barra-superior .row {
+  margin-bottom: 0;
+}
+
+.buscar-campo{
+  float: left;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  width: 70% ;
+}
+
+.contenedor-botones{
+  margin-top: 1rem;
+}
+
+#publicacion-texto {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  resize: none;
+  border: 1px solid #ff8f00;
+  background-color: #ff8f00;
+  height: 5rem;
+  color: #fff; 
 }

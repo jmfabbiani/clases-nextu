@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Importar la hojas de estilos de materialize css-->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/customColors.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <title>Contenedores y Sistema de Rejilla</title>
 </head>
@@ -16,20 +17,64 @@
       <div class="row">
         <div class="col s12 m8 l5 contenedor-logo-buscar">
           <img src="img/browser.png" alt="ShareUrCode" class="logo"/>
-          <div class="">
-            <input type="text" name="" value="">
+          <div class="input-field buscar-campo">
+            <input type="text" placeholder="Buscar...">
+            <i class="material-icons prefix">search</i>
           </div>
         </div>
+        <div class="col l4 offset-l3 contenedor-botones hide-on-small-only">
+          <a class="btn-floating btn-small waves-effect waves-light blue-grey"><i class="material-icons">drafts</i></a>
+          <a class="btn-floating btn-small waves-effect waves-light blue-grey"><i class="material-icons">archive</i></a>
+          <a class="btn-floating btn-small waves-effect waves-light blue-grey"><i class="material-icons">help</i></a>
+        </div>
       </div>
+
     </div>
     <div class="s2 m2 l2 col blue-grey lighten-5 columna-grupos push-s10">
-      <span>Columna para los grupos</span>
+      <div class="collection">
+        <a class="collection-item avatar">
+          <img src="img/jsLogo.png" alt="" class="circle">
+          <span class="title hide-on-med-and-down">JavaScript</span>
+          <p class="hide-on-med-and-down" id="miembros">132 Miembros</p>
+        </a>
+        <a class="collection-item avatar">
+          <img src="img/cssLogo.png" alt="" class="circle">
+          <span class="title hide-on-med-and-down">CSS</span>
+          <p class="hide-on-med-and-down" id="miembros">101 Miembros</p>
+        </a>
+        <a class="collection-item avatar">
+          <img src="img/nodeLogo.png" alt="" class="circle">
+          <span class="title hide-on-med-and-down">NodeJS</span>
+          <p class="hide-on-med-and-down" id="miembros">93 Miembros</p>
+        </a>
+        <a class="collection-item avatar">
+          <img src="img/reactLogo.png" alt="" class="circle">
+          <span class="title hide-on-med-and-down">ReactJS</span>
+          <p class="hide-on-med-and-down" id="miembros">64 Miembros</p>
+        </a>
+        <a class="collection-item avatar">
+          <img src="img/angularLogo.png" alt="" class="circle">
+          <span class="title hide-on-med-and-down">AngularJS</span>
+          <p class="hide-on-med-and-down" id="miembros">34 Miembros</p>
+        </a>
+
+      </div>
     </div>
     <div class="s10 m7 l7 col white columna-principal pull-s2 z-depth-1">
       <div class="row">
         <div class="s12 m12 l8 col white columna-publicaciones">
           <div class="contenedor-write-publicacion card amber lighten-4">
-
+            <div class="card-content">
+              <span>Escribe una nueva publicación</span>
+              <form>
+              <textarea id="publicacion-texto"></textarea>
+                <a href="#" class="btn-floating waves-effect white-text blue-grey"><i class="material-icons">code</i></a>
+                <a href="#" class="btn-floating waves-effect white-text blue-grey"><i class="material-icons">edit</i></a>
+                <a href="#" class="btn-floating waves-effect white-text blue-grey"><i class="material-icons">mic</i></a>
+                <button class="btn-flat waves-effect waves-light blue-grey white-text right hide-on-small-only" type="submit" name="action"><i class="material-icons">send</i></button>
+                <button class="btn-floating waves-effect waves-light white-text blue-grey right hide-on-med-and-up" type="submit" name="action"><i class="material-icons">send</i></button>
+              </form>
+            </div>
           </div>
           <div class="contenedor-publicacion card amber lighten-4">
             <div class="row contenido-publicacion">

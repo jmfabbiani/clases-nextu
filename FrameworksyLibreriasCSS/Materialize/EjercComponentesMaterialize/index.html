@@ -77,20 +77,29 @@
             </div>
           </div>
           <div class="contenedor-publicacion card amber lighten-4">
-            <div class="row contenido-publicacion">
-              <div class="s12 col">
-                <video src="media/vid1.mov" autoplay controls class="responsive-video media-element"></video>
-              </div>
+            <div class="card-content blue-grey white-text">
+              <span class="card-title activator">Carlos32: <i class="material-icons right">more_vert</i></span>
+              <p>
+                Les quiero compartir mi código usando Flexbox en CSS3.
+              </p>
+            </div>
+            <div class="card-image">
+              <video src="media/vid1.mov" autoplay controls class="responsive-video media-element"></video>
+            </div>
+            <div class="card-reveal grey white-text">
+              <span class="card-title activatort">Uso de Flexbox<i class="material-icons right">clear</i></span>
+              <p>
+                Este código se encarga de poner unos bloques de colores en un contenedor padre usando Flexbox.
+              </p>
             </div>
           </div>
+
           <div class="contenedor-publicacion card amber lighten-4">
-            <div class="row contenido-publicacion">
-              <div class="s12 col">
-                <p class="flow-text">
-                  Hola, quiero compartirles mi experiencia como programador web.
-                  He aprendido mucho de diseño front-end mediante diversos frameworks
-                  CSS y la verdad me siento muy a gusto desarrollando con Materialize CSS.
-                </p>
+            <div class="card-content blue-grey white-text">
+              <span class="card-title activator">Juan.JS: <i class="material-icons right">more_vert</i></span>
+              <p>
+                Tengo una duda sobre Materialize CSS. ¡Ayuda!
+              </p>
                 <blockquote>
                   En esta ocasión estoy aprendiendo a implementar texto adaptativo, imágenes y video.
                   Me ha resultado muy sencillo implementar cada uno de estos elementos puesto que el Framework
@@ -98,9 +107,15 @@
                   al usar un video desde la web, ¿Alguien puede ayudarme?
                 </blockquote>
               </div>
+              <div class="card-reveal grey white-text">
+                <span class="card-title">Duda sobre Materialize CSS<i class="material-icons right">close</i></span>
+                <p class="flow-text">
+                  Hola, quiero compartirles mi experiencia como programador web. He aprendido mucho de diseño front-end mediante diversos frameworks CSS y la verdad me siento muy a gusto desarrollando con Materialize CSS.
+                </p>
+              </div>
             </div>
-          </div>
         </div>
+
         <div class="l3 offset-l1 col white columna-news hide-on-med-and-down">
           <div class="contenedor-noticias amber lighten-4">
             <h5 class="center-align">Últimas noticias</h5>
@@ -122,16 +137,102 @@
     </div>
     <div class="m3 l3 col white columna-chat hide-on-small-only">
       <div class="row">
-        <div class="s12 col blue-grey bloque-feed">
-          <h5>Bloque para las actividades recientes</h5>
+        <div class="s12 col bloque-feed">
+          <ul class="collection with-header avatar">
+            <li  class="collection-header blue-grey white-text"><h5>Actividades Recientes</h5></li>
+            <li Class="collection-item avatar blue-grey white-text">
+              <i class="material-icons circle blue">replay</i>
+              <span class="title">Maria_Dev</span>
+              <p>
+                respondió tu pregunta
+              </p>
+            </li>
+            <li Class="collection-item avatar blue-grey white-text">
+              <i class="material-icons circle green">person_add</i>
+              <span class="title">CodigosOnline</span>
+              <p>
+                quiere agregarte como amigo
+              </p>
+            </li>
+            <li Class="collection-item avatar blue-grey white-text">
+              <i class="material-icons circle yellow darken-3">help</i>
+              <span class="title">WebRodrigo</span>
+              <p>
+                te hizo una pregunta
+              </p>
+            </li>
+            <li Class="collection-item avatar blue-grey white-text">
+              <i class="material-icons circle purple">people</i>
+              <span class="title">Grupo JavaScript</span>
+              <p>
+                hizo una publicación
+              </p>
+            </li>
+          </ul>
         </div>
-        <div class="s12 col grey lighten-1 bloque-chat">
-          <h5>Bloque para el chat</h5>
+        <div class="s12 col bloque-chat">
+          <ul class="collection with-header">
+            <li  class="collection-header grey lighten-1"><h5>Chat</h5></li>
+            <li Class="collection-item grey lighten-1">
+              <div class="chip">
+                <img src="img/hombre.png" alt="">
+                WebRodrigo
+              </div>
+            </li>
+            <li class="collection-item grey lighten-1">
+              <div class="chip">
+                <img src="img/hombre.png">
+                Carlos32
+              </div>
+            </li>
+            <li class="collection-item grey lighten-1">
+              <div class="chip">
+                <img src="img/mujer.png">
+                MariaDev
+              </div>
+            </li>
+            <li class="collection-item grey lighten-1">
+              <div class="chip">
+                <img src="img/hombre.png">
+                Juan.JS
+              </div>
+            </li>
+            <li class="collection-item grey lighten-1">
+              <div class="chip">
+                <img src="img/mujer.png">
+                Rita_G
+              </div>
+            </li>
+            <li class="collection-item grey lighten-1">
+              <div class="chip">
+                <img src="img/mujer.png">
+                Jazmin122
+              </div>
+            </li>
+            <li class="collection-item grey lighten-1">
+              <div class="chip">
+                <img src="img/hombre.png">
+                CodigosOnline
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-
+    <div class="fixed-action-btn hide-on-small-only" style="bottom: 45px; right: 90vw;">
+      <a class="btn-floating btn-large red">
+        <i class="large material-icons amber darken-4">build</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating red"><i class="material-icons">notifications_active</i></a></li>
+        <li><a class="btn-floating yellow"><i class="material-icons">share</i></a></li>
+        <li><a class="btn-floating green"><i class="material-icons">lock_open</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">volume_off</i></a></li>
+      </ul>
+    </div>
   </div>
+
+
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>

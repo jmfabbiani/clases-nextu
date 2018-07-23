@@ -8,9 +8,10 @@ div[class*="columna"]{
 
 div[class*="bloque"]{
   height: 25rem;
+  overflow: scroll;
 }
 
-.columna-news, .columna-news {
+.columna-chat, .columna-news {
   padding: 0 !important;
 }
 
@@ -20,7 +21,6 @@ div[class*="bloque"]{
 
 .contenedor-publicacion{
   min-height: 17rem;
-  padding: 2rem;
 }
 
 .contenedor-noticias {
@@ -62,5 +62,11 @@ div[class*="bloque"]{
   border: 1px solid #ff8f00;
   background-color: #ff8f00;
   height: 5rem;
-  color: #fff; 
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .columna-grupos{
+    padding: 0 !important;
+  }
 }

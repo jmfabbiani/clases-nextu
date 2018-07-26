@@ -1,0 +1,25 @@
+/*clase para el body*/
+body {
+  background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: 100% !important;
+    z-index: 0;
+
+}
+
+/*clase para los contenedores*/
+.contenedor {
+	background-color: #bf5b03;
+	opacity: 0.85;
+}
+
+/*clase del header*/
+#header{
+	color: white;
+	border-right: solid 2px white;
+}

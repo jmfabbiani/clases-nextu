@@ -7,6 +7,7 @@ header {
   border-radius: 5px;
 }
 
+/* Clases para darle estilos al logo */
 .logo-rblog {
   width: 150px;
 }
@@ -15,10 +16,12 @@ header {
   padding: 18px;
 }
 
+/* Clase para darle estilos a los Iconos Sociales*/
 #social-logo {
-  width: 30px;
+  width: 35px;
 }
 
+/*Clase para darle estilos a la barra de navegacion*/
 .nav-link {
   position: relative;
   padding: 1rem;
@@ -36,4 +39,56 @@ header {
   background-color: #efefef;
   border-radius: 5px;
   margin-top: 1px;
+}
+
+/*Clase para darle estilos a el area de comentario*/
+.img-formulario {
+  width: 30px
+}
+
+/*Clase para darle estilos a el area central*/
+.section-central {
+  background-color: #efefef;
+  border-radius: 5px;
+}
+
+/*Clase para dispositivos medianos*/
+@media (max-width: 991px) {
+	.busqueda {
+		display: none;
+	}
+
+	.contenido {
+		margin: 5px 10px;
+	}
+
+	.logo-blog {
+		margin: 0px 10px;
+		text-align: center;
+	}
+
+	.redes-sociales {
+		text-align: center;
+	}
+
+  .nav-link {
+    position: relative;
+    font-weight: 200;
+    color: black;
+  }
+
+  #social-logo {
+    width: 25px;
+  }
+}
+
+/*Clase para dispositivos grandes*/
+@media (min-width: 991px) {
+	.redes-sociales {
+		text-align: right;
+	}
+
+	.logo-blog {
+		text-align: left;
+	}
 }

@@ -14,12 +14,39 @@ body {
 
 /*clase para los contenedores*/
 .contenedor {
-	background-color: #bf5b03;
-	opacity: 0.85;
+	background-color: rgb(204, 99, 0, 0.85);
 }
 
-/*clase del header*/
+/*clase para el header*/
 #header{
 	color: white;
 	border-right: solid 2px white;
+}
+
+.titulo {
+	text-align: left;
+  text-shadow: 2px 1px 1px #800000;
+  line-height: 1.5em;
+}
+
+.slogan {
+	text-align: right;
+  text-shadow: 2px 1px 1px #800000;
+  line-height: 1.5em;
+}
+
+/*clase para las secciones*/
+.contenedor-secciones {
+  background-color: rgb(204, 99, 0, 0.85);
+	border-top: solid 2px white;
+}
+
+
+/*clase para la busqueda*/
+#busqueda {
+	background-color: rgb(255, 242, 230, 0.80);
+}
+
+.thumbnail {
+  opacity: 1;
 }

@@ -1,0 +1,39 @@
+body {
+  background-color: #d81900;
+}
+
+header {
+  background-color: #efefef;
+  border-radius: 5px;
+}
+
+.logo-rblog {
+  width: 150px;
+}
+
+.logo-blog {
+  padding: 18px;
+}
+
+#social-logo {
+  width: 30px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: white;
+  background-color: #d81900;
+}
+
+.barra-navegacion {
+  background-color: #efefef;
+  border-radius: 5px;
+  margin-top: 1px;
+}

@@ -41,6 +41,9 @@ body {
 	border-top: solid 2px white;
 }
 
+.contenido {
+  background-color: rgb(255, 242, 230, 0.80);
+}
 
 /*clase para la busqueda*/
 #busqueda {
@@ -49,4 +52,16 @@ body {
 
 .thumbnail {
   opacity: 1;
+}
+
+.contenido {
+	background-color: rgb(255, 245, 230);
+}
+
+.comentarios {
+	border-top: solid 2px white;
+}
+
+.usuario {
+	background-color: rgb(255, 235, 204);
 }

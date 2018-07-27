@@ -18,7 +18,52 @@ header {
   margin-top: 10px;
 }
 
-.btn {
+#btn_nav {
 	margin-left: 5px;
 	margin-top: 2px;
+}
+
+p {
+	text-align: justify;
+}
+
+
+/* Clases para los campos del formulario*/
+.input-field label {
+     color: white;
+}
+/* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: black;
+   }
+
+	 /* label underline focus color */
+	.input-field input[type=text]:focus {
+		border-bottom: 1px solid black;
+		box-shadow: 0 1px 0 0  black;
+	}
+	/* valid color */
+    .input-field input[type=text].valid {
+      border-bottom: 1px solid black;
+      box-shadow: 0 1px 0 0 black;
+}
+
+/* Clases boton de envio*/
+#btn_send {
+  background-color: white;
+	color: #1e88e5;
+}
+
+#btn_send:hover {
+  background-color: #01579b;
+	color: white;
+}
+
+#btn_send:active {
+  background-color: #283593;
+}
+
+#btn_send:visited {
+  background-color: #283593;
+	color: black;
 }

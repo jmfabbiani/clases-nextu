@@ -8,7 +8,7 @@ var Pedido1 = {
 
 var Pedido2 = {
   cliente: "Andres Felipe Liberato",
-  productos: ["Naranjas", "Leche", "Queso", "Pan"],
+  productos: ["Naranjas", "xºLeche", "Queso", "Pan"],
   precios: [1000, 2000, 3000, 1500],
   cantidad: [50, 2, 2, 20]
 }
@@ -19,25 +19,33 @@ var valorTotal = 0
 
 // Algoritmo de calculo
 
+function realizarCalculo(Pedido, callback) {
+  for (var indice in Pedido.productos) {
+    resultado = resultado + (Pedido.precios[indice] * Pedido.cantidad[indice])
+  }
 
-for (var indice in Pedido.productos) {
-  resultado = resultado + (Pedido.precios[indice] * Pedido.cantidad[indice])
+  valorTotal = resultado + (resultado * IVA)
+
+  if (valorTotal > 10000) {
+    premio = "Tiene derecho a un premio"
+  } else {
+    premio = "No tiene derecho a un premio"
+  }
+
+  var mensaje = "Señor(a): " + Pedido.cliente + " el valor total de su pedido es: " + resultado + " y aplicando el IVA: " + valorTotal +
+                  ", debido al valor de su compra: " + premio
+  callback(mensaje)
 }
 
-valorTotal = resultado + (resultado * IVA)
-
-if (valorTotal > 10000) {
-  premio = "Tiene derecho a un premio"
-} else {
-  premio = "No tiene derecho a un premio"
+function callbackAviso(mensaje) {
+  alert(mensaje)
 }
-
 
 var button1 = document.getElementById('calculo1')
 button1.addEventListener('click', function(){
 
   // Aqui debes llamar la funcion realizarCalculo y enviarle como argumento el primer pedido y el callback que se definio como funcion
-
+realizarCalculo(Pedido1, callbackAviso)
 
 })
 
@@ -45,5 +53,8 @@ var button2 = document.getElementById('calculo2')
 button2.addEventListener('click', function() {
 
   // Aqui debes llamar la funcion realizarCalculo y enviarle como argumento el segundo pedido y un callback como funcion anonima
-
+  realizarCalculo(Pedido2, function(mensaje) {
+    alert(mensaje)
+  })
+  
 })

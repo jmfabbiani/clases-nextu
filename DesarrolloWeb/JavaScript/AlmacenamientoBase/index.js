@@ -49,7 +49,7 @@ var Agenda =  {
   init: function() {
     this.listenMapClick()
     this.sitiosGuardados = []
-    sessionStorage.setItem('sitios',JSON.stringify())
+    this.loadSites()
   },
   listenMapClick: function(){
     var self = this
@@ -67,6 +67,7 @@ var Agenda =  {
           latitude: position.lat(),
           longitude: position.lng()
           }
+
         self.saveAndPlaceMarker(site)
         nombre.value = ''
         descripcion.value = ''
@@ -75,9 +76,11 @@ var Agenda =  {
     })
   },
   saveAndPlaceMarker: function(site){
-    this.sitiosGuardados = JSON.parse(sessionStorage.getItem('sitios'))
+    if(localStorage.sitios){
+      this.sitiosGuardados = JSON.parse(localStorage.getItem('sitios'))
+    }
     this.sitiosGuardados.push(site)
-    sessionStorage.setITem('sitios',JSON.stringify(this.sitiosGuardados))
+    localStorage.setItem('sitios',JSON.stringify(this.sitiosGuardados))
     this.renderSite(site)
   },
   renderSite: function(site){
@@ -90,18 +93,27 @@ var Agenda =  {
 
     var newSite = htmlInfo
     var result = newSite.replace(':nombre:',site.nombre)
-                        .replace(':latitud:',sie.latitud)
-                        .replace(':longitud:',sie.longitud)
-                        .replace(':descripcion:',sie.descripcion)
+                        .replace(':latitud:',site.latitud)
+                        .replace(':longitud:',site.longitud)
+                        .replace(':descripcion:',site.descripcion)
     var allSites = document.getElementsByClassName('guardados')[0]
     var markerOpts = {
       position: {
-        lat: site.latitud ,
+        lat: site.latitud,
         lng: site.longitud
       },
       map:map
     }
     var newMarker = new google.maps.Marker(markerOpts)
     allSites.innerHTML = allSites.innerHTML + result
+  },
+  loadSites: function() {
+    if (localStorage.sitios) {
+      var sitios = JSON.parse(localStorage.getItem('sitios'))
+      var self = this
+      sitios.map(function(site){
+        self.renderSite(site)
+      })
+    }
   }
 }

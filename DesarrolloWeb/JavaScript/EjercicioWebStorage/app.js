@@ -20,6 +20,34 @@ var botonRegistro = document.getElementById('registrar'),
     botonReserva  = document.getElementById('reservar')
     inputDocumento = document.getElementById('numDocRes');
 
+function guardarUsuario() {
+  var usuario = {
+    numeroDoc: document.getElementById('numDoc').value,
+    nombreCompleto: document.getElementById('nombreCom').value,
+    correo: document.getElementById('correo').value,
+    nombreUsuario: document.getElementById('nombreUsuario').value,
+    password: document.getElementById('password').value
+  }
+  localStorage.setItem('usuario', JSON.stringify(usuario))
+  formReserva.className = "reserva"
+  formRegistro.className = "registro hide"
+}
+
+function guardarReserva() {
+  var reserva = {
+    destino: document.getElementsByClassName('destino').value
+  }
+  localStorage.setItem('reserva', JSON.stringify(reservar))
+  alert('Se guardo la reserva correctamente')
+}
+
+function consultarUsuario(documento) {
+  var usuario = JSON.parse(localStorage.getItem('usuario'))
+  if (usuario.numeroDoc === documento) {
+    document.getElementById('nombreUsuarioRes').value = usuario.nombreUsuario
+  }
+}
+
 botonRegistro.addEventListener('click', function(e) {
   e.preventDefault()
 

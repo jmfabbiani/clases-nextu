@@ -4,16 +4,22 @@ var formRegistro = document.getElementsByClassName('registro')[0],
 
 // Almacenamos el objeto localStorage en una variable
 var Storage = window.localStorage
-// Verificar si localStorage tiene alguna
-if (Storage.length > 0 && Storage.hasOwnProperty('usuario')) {
-  // Si la llave usuario existe en localStorage mostrar el formulario de reserva
-  formReserva.className = "reserva"
-  formRegistro.className = "registro hide"
-} else {
-  // Si no existe se debe mostrar el formulario de regisro
-  formRegistro.className = "registro"
-  formReserva.className += "reserva hide"
-}
+
+//Crear el Worker
+var workerUsuario = new Worker('verificaUsuario.js')
+workerUsuario.postMessage(Storage.usuario ? Storage.usuario : {})
+workerUsuario.addEventListener('message', function(e) {
+  if (e.data == true){
+    alert(e.data)
+    // Si la llave usuario existe en localStorage mostrar el formulario de reserva
+    formReserva.className = "reserva"
+    formRegistro.className = "registro hide"
+  } else {
+    // Si no existe se debe mostrar el formulario de regisro
+    formRegistro.className = "registro"
+    formReserva.className += "reserva hide"
+  }
+})
 
 
 var botonRegistro = document.getElementById('registrar'),

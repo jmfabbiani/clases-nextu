@@ -1,4 +1,4 @@
-self.addEventListener('message', function(e) {
+  self.addEventListener('message', function(e) {
   var datos = JSON.parse(e.data)
   console.log(datos);
   if (datos.hasOwnProperty('numeroDoc')) {

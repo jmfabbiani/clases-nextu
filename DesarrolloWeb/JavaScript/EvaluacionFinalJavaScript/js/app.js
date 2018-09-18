@@ -204,58 +204,60 @@ var Calculadora = {
       					resultado = multiplicar(parseFloat(numeroOculto),parseFloat(numeroPantalla));
       					resultado=""+resultado;
       					resultado=resultado.substr(0,8);
-      				break;
+      				  break;
       				case "/":
       					resultado = dividir(parseFloat(numeroOculto),parseFloat(numeroPantalla));
       					resultado=""+resultado;
       					resultado=resultado.substr(0,8);
       				break;
       			}
-  			numeroOculto = 0;
+  			  numeroOculto = 0;
   				pantalla.innerHTML=resultado;
   				numeroPantalla=resultado;
   				iniciarNumeroEnPantalla=1;
-              }
-      }
-  	function limpiarPantalla(){
+          }
+    }
+
+    function limpiarPantalla(){
   		pantalla.innerHTML="0";
-           numeroPantalla="0";
-           conComa=0;
-           numeroOculto=0;
-           operacion="no";
-  		 repetirOperacion=0;
+      numeroPantalla="0";
+      conComa=0;
+      numeroOculto=0;
+      operacion="no";
+  		repetirOperacion=0;
   	}
-  	function numeroNegativo() {
+
+    function numeroNegativo() {
   		if(pantalla.innerHTML.length>0){
   				numeroOriginal=Number(numeroPantalla);
   				numeroOriginal=-numeroOriginal;
   				numeroPantalla=String(numeroOriginal);
   				pantalla.innerHTML=numeroPantalla;
   		}
-      }
+    }
 
   	function agregarNumeroYComa(numero){
   		if (numeroPantalla=="0" || iniciarNumeroEnPantalla==1  ) {
-              pantalla.innerHTML=numero;
-              numeroPantalla=numero;
-              if (numero==".") {
-                 pantalla.innerHTML="0.";
-                 numeroPantalla=numero;
-                 conComa=1;
-                 }
-             }
-             else {
-                 if (numero=="." && conComa==0) {
-                     pantalla.innerHTML+=numero;
-                     numeroPantalla+=numero;
-                     conComa=1;
-                 }
-                 else if (numero=="." && conComa==1) {}
-                 else {
-                     pantalla.innerHTML+=numero;
-                     numeroPantalla+=numero
-                 }
-              }
+        pantalla.innerHTML=numero;
+        numeroPantalla=numero;
+        if (numero==".") {
+          pantalla.innerHTML="0.";
+          numeroPantalla=numero;
+          conComa=1;
+        }
+      }
+      else {
+        if (numero=="." && conComa==0) {
+          pantalla.innerHTML+=numero;
+          numeroPantalla+=numero;
+          conComa=1;
+        }
+        else if (numero=="." && conComa==1) {}
+        else {
+          pantalla.innerHTML+=numero;
+          numeroPantalla+=numero
+        }
+      }
   	}
 
 		function actualizarResultado(nuevoResultado){
@@ -263,24 +265,29 @@ var Calculadora = {
 			return resultado;
 		}
 
-			function dividir(num1,num2){
-				var resultado = num1/num2;
-				return actualizarResultado(resultado);
-			}
-			function multiplicar(num1,num2){
-				var resultado = num1*num2;
-				return actualizarResultado(resultado);
-			}
-			function restar(num1,num2){
-				var resultado = num1-num2;
-				return actualizarResultado(resultado);
-			}
-			function sumar(num1,num2){
-				var resultado = num1+num2;
-				return actualizarResultado(resultado);
-			}
+		function dividir(num1,num2){
+			var resultado = num1/num2;
+			return actualizarResultado(resultado);
+		}
+
+		function multiplicar(num1,num2){
+			var resultado = num1*num2;
+			return actualizarResultado(resultado);
+		}
+
+    function restar(num1,num2){
+			var resultado = num1-num2;
+			return actualizarResultado(resultado);
+		}
+
+    function sumar(num1,num2){
+			var resultado = num1+num2;
+			return actualizarResultado(resultado);
+		}
 
 
 	})();
 
+window.onload=function(){
+  	Calculadora.init();
 }

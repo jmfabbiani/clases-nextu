@@ -87,9 +87,9 @@ var Calculadora = (function(){
 	    //Animacion de los Botones
   	function reducirBoton(boton){
   		if(boton.target.alt=="mas"){
-  			boton.target.style="padding-right:3px";
+  			boton.target.style="padding-right:2px";
   		}else{
-  		boton.target.style="padding:3px";
+  		boton.target.style="padding:2px";
   		}
   	}
 

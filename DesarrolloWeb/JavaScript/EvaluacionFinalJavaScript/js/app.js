@@ -1,4 +1,4 @@
-var Calculadora = {
+var Calculadora = (function(){
 
   var numeroPantalla="0";
   var	iniciarNumeroEnPantalla=1;
@@ -27,7 +27,7 @@ var Calculadora = {
 		document.getElementById("por").addEventListener("click",operador,false);
 		document.getElementById("dividido").addEventListener("click",operador,false);
 		document.getElementById("raiz").addEventListener("click",mostrarEnPantalla,false);
-		document.getElementById("sign").addEventListener("click",numeroNegativvo,false);
+		document.getElementById("sign").addEventListener("click",numeroNegativo,false);
 		document.getElementById("on").addEventListener("click",limpiarPantalla,false);
 		document.getElementById("punto").addEventListener("click",mostrarEnPantalla,false);
 		document.getElementById("igual").addEventListener("click",igual,false);

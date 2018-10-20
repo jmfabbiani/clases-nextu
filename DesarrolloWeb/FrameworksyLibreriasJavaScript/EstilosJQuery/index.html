@@ -13,13 +13,12 @@
     $(".logo").click(function(){
       var tipoFont = $("body").css(["font-family","font-size","box-sizing"]);
       $.each(tipoFont, function(tipo,value){
-        window.alert(tipo + ":" + value);
-      });
-    });
+      window.alert(tipo + ":" + value);
+      })
+    })
 
     $(":header, p, span").hover(function(){
       $(this).css("color","yellow");
-
     });
 
     $(".cuadro").click(function(){
@@ -33,9 +32,7 @@
       $(this).addClass("verde");
     });
 
-
-  });
-
+  })
   </script>
 
 

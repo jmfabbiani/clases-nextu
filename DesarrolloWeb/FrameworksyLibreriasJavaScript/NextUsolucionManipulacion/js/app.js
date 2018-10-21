@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
   //Evento para el botón mas (+)
   $("#mas").click(function(){
-     $(".carta:last-of-type").after("<img src='image/back.jpg' class='carta'/>");
+    $(".carta:last-of-type").after("<img src='image/back.jpg' class='carta'/>");
   });
 
   //Evento para el botón menos (-)
@@ -12,17 +12,18 @@ $( document ).ready(function() {
 
   //Evento al hacer click en una carta
   $(document).on("click", "img.carta", function(){
+    //Función que carga una imágen aleatoria a la carta
     $(this).attr("src",function(){
-      var numero = Math.floor((Math.random()*52)+1);
+      var numero = Math.floor((Math.random() * 52) + 1);
       var ruta = "image/"+numero+".png";
       return ruta;
     });
 
+    //Calculo del número de la carta en la baraja y muestra en pantalla
     var ruta = $(this).attr("src");
     var numeroCarta = ruta.slice(0,-4);
     numeroCarta = numeroCarta.substr(6,2);
     $("#contenido-pantalla").html("La carta es la número: <b>" + numeroCarta + "</b> de la baraja");
-
   });
 
   //Evento de hover

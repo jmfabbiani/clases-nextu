@@ -1,15 +1,13 @@
-$( document ).ready(function() {
 
-  alert("La página se ha cargado");
+var HtmlNode = document.getElementById('datos');
 
-  $( window ).resize(function() {
-    $( "h4" ).html( "El ancho de la página es: " + $( window ).width() );
-  });
-
-  $( window ).scroll(function(){
-    $( "h4" ).html("La posición vertical es: "+ $(window).scrollTop());
-  });
-
-
-
-});
+$.ajax({
+  url: 'http://api.tvmaze.com/shows',
+  type:'GET',
+  data:{},
+  success: function (data){
+    data.forEach(function (val, i){
+      HtmlNode.innerHTML = HtmlNode.innerHTML + '<li>' + val.name + '</li>';
+    })
+  }
+})

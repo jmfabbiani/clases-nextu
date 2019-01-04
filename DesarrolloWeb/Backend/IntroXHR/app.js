@@ -14,7 +14,7 @@ function ajaxAsync(){
       url: URLUser,
       type: 'GET',
       async: true,
-      sucess: function(response){
+      success: function(response){
         var data = response
         if(data.message && data.message == "Not Found"){
           alert('El usuario no existe en Github')

@@ -14,8 +14,8 @@
 8. Efecto de movimiento entre los Caramelos "Drag and Drop"
 9. Intercambio de Caramalos en el "Drag and Drop"
 10. Eliminacion y Colocacion automatica de los Caramelos
-11.
-12.
+11. Contador de Puntaje
+12. Contador de Movimientos de Caramelos
 13.
 14.
 

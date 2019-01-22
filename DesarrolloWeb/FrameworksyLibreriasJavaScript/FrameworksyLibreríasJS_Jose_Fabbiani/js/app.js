@@ -8,16 +8,16 @@
 2. Animacion del Titulo
 3. Arreglo y Creacion de Filas y Columnas de Dulces
 4. Generar Dulces Aleatorios
-5. Llenar el Tablero
+5. Llenar el Tablero y Verificar si hay caramelos que eliminar
 6. Validacion de Columnas para eliminar dulces
 7. Validacion de Filas para eliminar dulces
-6. Efecto de movimiento entre los Caramelos "Drag and Drop"
-7. Intercambio de Caramalos en el "Drag and Drop"
-8. Eliminacion automatica de los Caramelos
-9.
-10.
+8. Efecto de movimiento entre los Caramelos "Drag and Drop"
+9. Intercambio de Caramalos en el "Drag and Drop"
+10. Eliminacion y Colocacion automatica de los Caramelos
 11.
 12.
+13.
+14.
 
 
 ******************************/
@@ -126,9 +126,10 @@ function genRandomCandy(min, max) {
 
 /*
 
-5. Llenar el Tablero
+5. Llenar el Tablero y Verificar si hay caramelos que eliminar
 
 */
+/* Llenar el Tablero*/
 function fillBoard() {
 	var top = 6;
 	var column = $('[class^="col-"]');
@@ -145,6 +146,16 @@ function fillBoard() {
 			}
 		}
 	});
+}
+
+/* Verificar y eliminar caramelos*/
+function setValidaciones() {
+	columnValidacion();
+	rowValidacion();
+	/* Eliminar caramelos */
+	if ($('img.delete').length !== 0) {
+		deletesCandyAnimation();
+	}
 }
 
 /*
@@ -269,7 +280,9 @@ function deleteRowCandy(candyPosition, candyRow) {
 
 
 /*
-6. Efecto de movimiento entre los caramelos "Drag and Drop"
+
+8. Efecto de movimiento entre los caramelos "Drag and Drop"
+
 */
 function addCandyEvents() {
 	$('img').draggable({
@@ -296,7 +309,9 @@ function enableCandyEvents() {
 	$('img').droppable('enable');
 }
 /*
-7. Intercambio de Caramalos en el "Drag and Drop"
+
+9. Intercambio de Caramelos en el "Drag and Drop"
+
 */
 function switchCandy(event, candyDrag) {
 	var candyDrag = $(candyDrag.draggable);
@@ -320,7 +335,7 @@ function switchCandy(event, candyDrag) {
 
 
 /*
-8. Eliminacion automatica de los Caramelos
+10. Eliminacion y Colocacion automatica de los Caramelos
 */
 function deletesCandyAnimation() {
 	disableCandyEvents();
@@ -352,7 +367,16 @@ function checkBoardPromise(result) {
 function showPromiseError(error) {
 	console.log(error);
 }
-
+/* Colocacion automatica de Caramelos */
+function deletesCandy() {
+	return new Promise(function (resolve, reject) {
+		if ($('img.delete').remove()) {
+			resolve(true);
+		} else {
+			reject('No se pudo eliminar Candy...');
+		}
+	})
+}
 
 
 /*

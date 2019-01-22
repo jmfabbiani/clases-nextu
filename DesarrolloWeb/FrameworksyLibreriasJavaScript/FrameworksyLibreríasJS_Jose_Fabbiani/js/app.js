@@ -11,8 +11,13 @@
 5. Llenar el Tablero
 6. Validacion de Columnas para eliminar dulces
 7. Validacion de Filas para eliminar dulces
-6.
-7.
+6. Efecto de movimiento entre los Caramelos "Drag and Drop"
+7. Intercambio de Caramalos en el "Drag and Drop"
+8. Eliminacion automatica de los Caramelos
+9.
+10.
+11.
+12.
 
 
 ******************************/
@@ -264,14 +269,100 @@ function deleteRowCandy(candyPosition, candyRow) {
 
 
 /*
-6. Animacion del Titulo
+6. Efecto de movimiento entre los caramelos "Drag and Drop"
 */
+function addCandyEvents() {
+	$('img').draggable({
+		containment: '.panel-tablero',
+		droppable: 'img',
+		revert: true,
+		revertDuration: 500,
+		grid: [100, 100],
+		zIndex: 10
+	});
+	$('img').droppable({
+		drop: switchCandy
+	});
+	enableCandyEvents();
+}
+
+function disableCandyEvents() {
+	$('img').draggable('disable');
+	$('img').droppable('disable');
+}
+
+function enableCandyEvents() {
+	$('img').draggable('enable');
+	$('img').droppable('enable');
+}
 /*
-7. Animacion del Titulo
+7. Intercambio de Caramalos en el "Drag and Drop"
 */
+function switchCandy(event, candyDrag) {
+	var candyDrag = $(candyDrag.draggable);
+	var dragSrc = candyDrag.attr('src');
+	var candyDrop = $(this);
+	var dropSrc = candyDrop.attr('src');
+	candyDrag.attr('src', dropSrc);
+	candyDrop.attr('src', dragSrc);
+
+	setTimeout(function () {
+		fillBoard();
+		if ($('img.delete').length === 0) {
+			candyDrag.attr('src', dragSrc);
+			candyDrop.attr('src', dropSrc);
+		} else {
+			sumMoves();
+		}
+	}, 500);
+
+}
+
+
 /*
-8. Animacion del Titulo
+8. Eliminacion automatica de los Caramelos
 */
+function deletesCandyAnimation() {
+	disableCandyEvents();
+	$('img.delete').effect('pulsate', 400);
+	$('img.delete').animate({
+			opacity: '0'
+		}, {
+			duration: 300
+		})
+		.animate({
+			opacity: '0'
+		}, {
+			duration: 400,
+			complete: function () {
+				deletesCandy()
+					.then(checkBoardPromise)
+					.catch(showPromiseError);
+			},
+			queue: true
+		});
+}
+
+function checkBoardPromise(result) {
+	if (result) {
+		fillBoard();
+	}
+}
+
+function showPromiseError(error) {
+	console.log(error);
+}
+
+
+
+/*
+9. Animacion del Titulo
+*/
+
+/*
+10. Animacion del Titulo
+*/
+
 /*
 9. Animacion del Titulo
 */

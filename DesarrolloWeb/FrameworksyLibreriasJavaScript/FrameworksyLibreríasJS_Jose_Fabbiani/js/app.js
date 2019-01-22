@@ -7,8 +7,10 @@
 1. Inicio y Preparacion del Juego
 2. Animacion del Titulo
 3. Arreglo y Creacion de Filas y Columnas de Dulces
-4.
-5.
+4. Generar Dulces Aleatorios
+5. Llenar el Tablero
+6. Validacion de Columnas para eliminar dulces
+7. Validacion de Filas para eliminar dulces
 6.
 7.
 
@@ -19,7 +21,6 @@
 
 1. Inicio, Reinicio y Preparacion del Juego
 */
-
 function initGame() {
 
 	animTitle();
@@ -46,7 +47,6 @@ $(function() {
 2. Animacion del Titulo
 
 */
-
 function animTitle() {
 	var interval = null;
   	var matchtitle = $(".main-titulo");
@@ -109,12 +109,160 @@ function giveCandyArrays(arrayType, index) {
 
 /*
 
-4. Validacion de Columnas
+4. Generar Dulces Aleatorios
 
 */
+function genRandomCandy(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
 /*
-5. Animacion del Titulo
+
+5. Llenar el Tablero
+
 */
+function fillBoard() {
+	var top = 6;
+	var column = $('[class^="col-"]');
+
+	column.each(function () {
+		var candys = $(this).children().length;
+		var agrega = top - candys;
+		for (var i = 0; i < agrega; i++) {
+			var candyType = genRandomCandy(1, 5);
+			if (i === 0 && candys < 1) {
+				$(this).append('<img src="image/' + candyType + '.png" class="element"></img>');
+			} else {
+				$(this).find('img:eq(0)').before('<img src="image/' + candyType + '.png" class="element"></img>');
+			}
+		}
+	});
+}
+
+/*
+
+6. Validacion de Columnas para eliminar dulces
+
+*/
+function columnValidacion() {
+	for (var j = 0; j < 7; j++) {
+		var counter = 0;
+		var candyPosition = [];
+		var extraCandyPosition = [];
+		var candyColumn = candyColumns(j);
+		var comparisonValue = candyColumn.eq(0);
+		var empty = false;
+		for (var i = 1; i < candyColumn.length; i++) {
+			var srcComparison = comparisonValue.attr('src');
+			var srcCandy = candyColumn.eq(i).attr('src');
+
+			if (srcComparison != srcCandy) {
+				if (candyPosition.length >= 3) {
+					empty = true;
+				} else {
+					candyPosition = [];
+				}
+				counter = 0;
+			} else {
+				if (counter == 0) {
+					if (!empty) {
+						candyPosition.push(i - 1);
+					} else {
+						extraCandyPosition.push(i - 1);
+					}
+				}
+				if (!empty) {
+					candyPosition.push(i);
+				} else {
+					extraCandyPosition.push(i);
+				}
+				counter += 1;
+			}
+			comparisonValue = candyColumn.eq(i);
+		}
+		if (extraCandyPosition.length > 2) {
+			candyPosition = $.merge(candyPosition, extraCandyPosition);
+		}
+		if (candyPosition.length <= 2) {
+			candyPosition = [];
+		}
+		candyCount = candyPosition.length;
+		if (candyCount >= 3) {
+			deleteColumnCandy(candyPosition, candyColumn);
+			setScore(candyCount);
+		}
+	}
+}
+function deleteColumnCandy(candyPosition, candyColumn) {
+	for (var i = 0; i < candyPosition.length; i++) {
+		candyColumn.eq(candyPosition[i]).addClass('delete');
+	}
+}
+
+/*
+
+7. Validacion de Filas para eliminar dulces
+
+*/
+function rowValidacion() {
+	for (var j = 0; j < 6; j++) {
+		var counter = 0;
+		var candyPosition = [];
+		var extraCandyPosition = [];
+		var candyRow = candyRows(j);
+		var comparisonValue = candyRow[0];
+		var empty = false;
+		for (var i = 1; i < candyRow.length; i++) {
+			var srcComparison = comparisonValue.attr('src');
+			var srcCandy = candyRow[i].attr('src');
+
+			if (srcComparison != srcCandy) {
+				if (candyPosition.length >= 3) {
+					empty = true;
+				} else {
+					candyPosition = [];
+				}
+				counter = 0;
+			} else {
+				if (counter == 0) {
+					if (!empty) {
+						candyPosition.push(i - 1);
+					} else {
+						extraCandyPosition.push(i - 1);
+					}
+				}
+				if (!empty) {
+					candyPosition.push(i);
+				} else {
+					extraCandyPosition.push(i);
+				}
+				counter += 1;
+			}
+			comparisonValue = candyRow[i];
+		}
+		if (extraCandyPosition.length > 2) {
+			candyPosition = $.merge(candyPosition, extraCandyPosition);
+		}
+		if (candyPosition.length <= 2) {
+			candyPosition = [];
+		}
+		candyCount = candyPosition.length;
+		if (candyCount >= 3) {
+			deleteRowCandy(candyPosition, candyRow);
+			setScore(candyCount);
+		}
+	}
+}
+function deleteRowCandy(candyPosition, candyRow) {
+	for (var i = 0; i < candyPosition.length; i++) {
+		candyRow[candyPosition[i]].addClass('delete');
+	}
+}
+
+
 /*
 6. Animacion del Titulo
 */

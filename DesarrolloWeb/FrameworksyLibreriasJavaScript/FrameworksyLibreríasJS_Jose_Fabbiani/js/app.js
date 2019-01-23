@@ -6,25 +6,24 @@
 
 1. Inicio y Preparacion del Juego
 2. Animacion del Titulo
-3. Arreglo y Creacion de Filas y Columnas de Dulces
-4. Generar Dulces Aleatorios
-5. Llenar el Tablero y Verificar si hay caramelos que eliminar
-6. Validacion de Columnas para eliminar dulces
-7. Validacion de Filas para eliminar dulces
+3. Generar Caramelos Aleatorios
+4. Creacion y Arreglos de Filas y Columnas de Caramelos
+5. Validacion de Columnas para eliminar dulces
+6. Validacion de Filas para eliminar dulces
+7. Llenar el Tablero y Verificar si hay caramelos que eliminar
 8. Efecto de movimiento entre los Caramelos "Drag and Drop"
-9. Intercambio de Caramalos en el "Drag and Drop"
+9. Intercambio de Caramelos en el "Drag and Drop"
 10. Eliminacion y Colocacion automatica de los Caramelos
 11. Contador de Puntaje
 12. Contador de Movimientos de Caramelos
-13.
-14.
-
+13. Finalizacion del Juego
 
 ******************************/
 
 /*
 
 1. Inicio, Reinicio y Preparacion del Juego
+
 */
 function initGame() {
 
@@ -35,11 +34,13 @@ function initGame() {
 		if ($(this).text() === 'Reiniciar') {
 			location.reload(true);
 		}
-		checkBoard();
+		fillBoard();
 		$(this).text('Reiniciar');
-		$('#timer').startTimer({
-			onComplete: gameOver
-		})
+		$("#timer").timer({
+    countdown: true,
+    duration: '2m',
+    callback: gameOver
+  })
 	});
 }
 /* Preparacion del Juego */
@@ -65,22 +66,20 @@ function animTitle() {
 
 /*
 
-3. Arreglo y Creacion de Filas y Columnas de Dulces
+3. Generar Caramelso Aleatorios
 
 */
-
-/* Arreglo de Colunmnas de Dulces */
-function candyColumns(index) {
-	var candyColumn = giveCandyArrays('columns');
-	return candyColumn[index];
+function genRandomCandy(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min;
 }
 
-/* Arreglo de Filas de Dulces */
-function candyRows(index) {
-	var candyRow = giveCandyArrays('rows', index);
-	return candyRow;
-}
+/*
 
+4. Creacion y Arreglos de Filas y Columnas de Caramelos
+
+*/
 /* Creacion de Filas y Columnas de Dulces */
 function giveCandyArrays(arrayType, index) {
 
@@ -112,55 +111,21 @@ function giveCandyArrays(arrayType, index) {
 	}
 }
 
-/*
-
-4. Generar Dulces Aleatorios
-
-*/
-function genRandomCandy(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min)) + min;
+/* Arreglo de Columnas de Dulces */
+function candyColumns(index) {
+	var candyColumn = giveCandyArrays('columns');
+	return candyColumn[index];
 }
 
-
-/*
-
-5. Llenar el Tablero y Verificar si hay caramelos que eliminar
-
-*/
-/* Llenar el Tablero*/
-function fillBoard() {
-	var top = 6;
-	var column = $('[class^="col-"]');
-
-	column.each(function () {
-		var candys = $(this).children().length;
-		var agrega = top - candys;
-		for (var i = 0; i < agrega; i++) {
-			var candyType = genRandomCandy(1, 5);
-			if (i === 0 && candys < 1) {
-				$(this).append('<img src="image/' + candyType + '.png" class="element"></img>');
-			} else {
-				$(this).find('img:eq(0)').before('<img src="image/' + candyType + '.png" class="element"></img>');
-			}
-		}
-	});
-}
-
-/* Verificar y eliminar caramelos*/
-function setValidaciones() {
-	columnValidacion();
-	rowValidacion();
-	/* Eliminar caramelos */
-	if ($('img.delete').length !== 0) {
-		deletesCandyAnimation();
-	}
+/* Arreglo de Filas de Dulces */
+function candyRows(index) {
+	var candyRow = giveCandyArrays('rows', index);
+	return candyRow;
 }
 
 /*
 
-6. Validacion de Columnas para eliminar dulces
+5. Validacion de Columnas para eliminar dulces
 
 */
 function columnValidacion() {
@@ -220,7 +185,7 @@ function deleteColumnCandy(candyPosition, candyColumn) {
 
 /*
 
-7. Validacion de Filas para eliminar dulces
+6. Validacion de Filas para eliminar Caramelos
 
 */
 function rowValidacion() {
@@ -278,6 +243,42 @@ function deleteRowCandy(candyPosition, candyRow) {
 	}
 }
 
+/*
+
+7. Llenar el Tablero y Verificar si hay caramelos que eliminar
+
+*/
+/* Llenar el Tablero*/
+function fillBoard() {
+	var top = 6;
+	var column = $('[class^="col-"]');
+
+	column.each(function () {
+		var candys = $(this).children().length;
+		var agrega = top - candys;
+		for (var i = 0; i < agrega; i++) {
+			var candyType = genRandomCandy(1, 5);
+			if (i === 0 && candys < 1) {
+				$(this).append('<img src="image/' + candyType + '.png" class="element"></img>');
+			} else {
+				$(this).find('img:eq(0)').before('<img src="image/' + candyType + '.png" class="element"></img>');
+			}
+		}
+	});
+	addCandyEvents();
+	setValidaciones();
+}
+
+/* Verificar y Eliminar Caramelos*/
+function setValidaciones() {
+	columnValidacion();
+	rowValidacion();
+	/* Eliminar caramelos */
+	if ($('img.delete').length !== 0) {
+		deletesCandyAnimation();
+	}
+}
+
 
 /*
 
@@ -308,6 +309,7 @@ function enableCandyEvents() {
 	$('img').draggable('enable');
 	$('img').droppable('enable');
 }
+
 /*
 
 9. Intercambio de Caramelos en el "Drag and Drop"
@@ -333,9 +335,16 @@ function switchCandy(event, candyDrag) {
 
 }
 
+function checkBoardPromise(result) {
+	if (result) {
+		fillBoard();
+	}
+}
 
 /*
+
 10. Eliminacion y Colocacion automatica de los Caramelos
+
 */
 function deletesCandyAnimation() {
 	disableCandyEvents();
@@ -358,15 +367,10 @@ function deletesCandyAnimation() {
 		});
 }
 
-function checkBoardPromise(result) {
-	if (result) {
-		fillBoard();
-	}
-}
-
 function showPromiseError(error) {
 	console.log(error);
 }
+
 /* Colocacion automatica de Caramelos */
 function deletesCandy() {
 	return new Promise(function (resolve, reject) {
@@ -380,13 +384,54 @@ function deletesCandy() {
 
 
 /*
-9. Animacion del Titulo
+
+11. Contador de Puntaje
+
 */
+function setScore(candyCount) {
+	var score = Number($('#score-text').text());
+	switch (candyCount) {
+		case 3:
+			score += 25;
+			break;
+		case 4:
+			score += 50;
+			break;
+		case 5:
+			score += 100;
+			break;
+		case 6:
+			score += 200;
+			break;
+		case 7:
+			score += 400;
+	}
+	$('#score-text').text(score);
+}
 
 /*
-10. Animacion del Titulo
+
+12. Contador de Movimientos de Caramelos
+
 */
+function sumMoves() {
+	var actualValue = Number($('#movimientos-text').text());
+	var result = actualValue += 1;
+	$('#movimientos-text').text(result);
+}
+
 
 /*
-9. Animacion del Titulo
+
+13. Finalizacion del Juego
+
 */
+function gameOver() {
+	$(".panel-score").animate({ width: "100%" }, 1000);
+  	$(".panel-tablero, .time").animate(
+	    { height: 0, width: 0, opacity: 0 },
+	    1000,
+	    function () { $(this).hide() });
+	$('h1.main-titulo').addClass('title-over')
+		.text('GAME OVER!');
+}
